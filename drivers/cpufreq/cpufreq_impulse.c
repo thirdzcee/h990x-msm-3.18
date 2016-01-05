@@ -1482,6 +1482,9 @@ static struct cpufreq_impulse_tunables *alloc_tunable(
 	tunables->timer_slack_val = DEFAULT_TIMER_SLACK;
 	tunables->io_is_busy = DEFAULT_IO_IS_BUSY;
 	tunables->max_freq_hysteresis = DEFAULT_MAX_FREQ_HYSTERESIS;
+	tunables->use_sched_load = DEFAULT_USE_SCHED_LOAD;
+	tunables->use_migration_notif = DEFAULT_USE_MIGRATION_NOTIF;
+	tunables->hispeed_freq = HISPEED_FREQ;
 
 	spin_lock_init(&tunables->target_loads_lock);
 	spin_lock_init(&tunables->above_hispeed_delay_lock);

@@ -123,13 +123,13 @@ config CPU_FREQ_DEFAULT_GOV_INTERACTIVE
 	  'interactive' governor for latency-sensitive workloads.
 
 config CPU_FREQ_DEFAULT_GOV_CAFACTIVE
-	bool "interactive"
-	select CPU_FREQ_GOV_CAFACTIVE
-	help
-	  Use the CPUFreq governor 'cafactive' as default. This allows
-	  you to get a full dynamic cpu frequency capable system by simply
-	  loading your cpufreq low-level hardware driver, using the
-	  'interactive' governor for latency-sensitive workloads.
+ 	bool "cafactive"
+ 	select CPU_FREQ_GOV_CAFACTIVE
+ 	help
+ 	  Use the CPUFreq governor 'cafactive' as default. This allows
+ 	  you to get a full dynamic cpu frequency capable system by simply
+ 	  loading your cpufreq low-level hardware driver, using the
+ 	  'cafactive' governor for latency-sensitive workloads.
 
 endchoice
 
@@ -229,6 +229,17 @@ config CPU_FREQ_GOV_CONSERVATIVE
 
 	  If in doubt, say N.
 
+config CPU_FREQ_GOV_CAFACTIVE
+	tristate "'cafactive' cpufreq policy governor"
+ 	help
+ 	  'cafactive' - CodeAurora(Qualcomm) version of interactive
+ 	  cpufreq policy governor.
+ 
+ 	  To compile this driver as a module, choose M here: the
+ 	  module will be called cpufreq_cafactive.
+ 
+ 	  If in doubt, say N.
+
 config CPUFREQ_DT
 	tristate "Generic DT based cpufreq driver"
 	depends on HAVE_CLK && OF
@@ -250,14 +261,6 @@ config CPU_BOOST
 	  various events that might occur in the system. As of now, the
 	  events it reacts to are:
 	  - Migration of important threads from one CPU to another.
-
-	  If in doubt, say N.
-	  
-config CPU_FREQ_GOV_CAFACTIVE
-	tristate "'cafactive' cpufreq policy governor"
-	help
-	  'cafactive' - this Governor is from CAF 4.4 version of
-	  interactive renamed as cafactive
 
 	  If in doubt, say N.
 

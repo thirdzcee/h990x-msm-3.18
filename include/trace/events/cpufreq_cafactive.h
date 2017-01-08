@@ -1,8 +1,8 @@
 #undef TRACE_SYSTEM
 #define TRACE_SYSTEM cpufreq_cafactive
 
-#if !defined(_TRACE_CPUFREQ_cafactive_H) || defined(TRACE_HEADER_MULTI_READ)
-#define _TRACE_CPUFREQ_cafactive_H
+#if !defined(_TRACE_CPUFREQ_CAFACTIVE_H) || defined(TRACE_HEADER_MULTI_READ)
+#define _TRACE_CPUFREQ_CAFACTIVE_H
 
 #include <linux/tracepoint.h>
 
@@ -106,7 +106,19 @@ TRACE_EVENT(cpufreq_cafactive_unboost,
 	    TP_printk("%s", __get_str(s))
 );
 
-#endif /* _TRACE_CPUFREQ_cafactive_H */
+TRACE_EVENT(cpufreq_cafactive_load_change,
+	    TP_PROTO(unsigned long cpu_id),
+	    TP_ARGS(cpu_id),
+	    TP_STRUCT__entry(
+		__field(unsigned long, cpu_id)
+	    ),
+	    TP_fast_assign(
+		__entry->cpu_id = cpu_id;
+	    ),
+	    TP_printk("re-evaluate for cpu=%lu", __entry->cpu_id)
+);
+
+#endif /* _TRACE_CPUFREQ_CAFACTIVE_H */
 
 /* This part must be outside protection */
 #include <trace/define_trace.h>

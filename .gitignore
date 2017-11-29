@@ -52,6 +52,15 @@ Module.symvers
 #
 /debian/
 
+#stuff that popped up
+firmware/analogix/mi1_eeprom_20_8b.img
+firmware/touch/elsa/L0L57P1_1_35.img
+firmware/touch/elsa/L0L57P1_2_00.img
+firmware/touch/elsa/L1L52P1_1_05.img
+firmware/touch/elsa/L1L57P1_1_07.img
+firmware/touch/elsa/elsa_limit.txt
+firmware/touch/elsa/elsa_limit_mfts.txt
+
 #
 # git files that we don't want to ignore even it they are dot-files
 #

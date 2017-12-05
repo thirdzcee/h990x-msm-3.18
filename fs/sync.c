@@ -354,8 +354,8 @@ SYSCALL_DEFINE1(fdatasync, unsigned int, fd)
  * @count:	length of the write
  *
  * This is just a simple wrapper about our general syncing function.
- */
-int generic_write_sync(struct file *file, loff_t pos, loff_t count)
+ *
+int generic_write_sync2(struct file *file, loff_t pos, loff_t count)
 {
 	if (!fsync_enabled)
 		return 0;
@@ -365,8 +365,8 @@ int generic_write_sync(struct file *file, loff_t pos, loff_t count)
 	return vfs_fsync_range(file, pos, pos + count - 1,
 			       (file->f_flags & __O_SYNC) ? 0 : 1);
 }
-EXPORT_SYMBOL(generic_write_sync);
-
+EXPORT_SYMBOL(generic_write_sync2);
+*/
 /*
  * sys_sync_file_range() permits finely controlled syncing over a segment of
  * a file in the range offset .. (offset+nbytes-1) inclusive.  If nbytes is

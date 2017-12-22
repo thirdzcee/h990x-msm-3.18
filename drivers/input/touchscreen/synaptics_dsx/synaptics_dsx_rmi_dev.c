@@ -369,7 +369,6 @@ static ssize_t rmidev_read(struct file *filp, char __user *buf,
 		retval = -EFAULT;
 		goto unlock;
 	}
-
 	tmpbuf = kzalloc(count + 1, GFP_KERNEL);
 	if (!tmpbuf) {
 		retval = -ENOMEM;
@@ -392,7 +391,6 @@ clean_up:
 	kfree(tmpbuf);
 unlock:
 	mutex_unlock(&(dev_data->file_mutex));
-
 	return retval;
 }
 

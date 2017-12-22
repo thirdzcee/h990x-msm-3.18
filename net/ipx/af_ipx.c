@@ -54,6 +54,62 @@
 #include <net/sock.h>
 #include <net/datalink.h>
 #include <net/tcp_states.h>
+/*
+ *	Implements an IPX socket layer.
+ *
+ *	This code is derived from work by
+ *		Ross Biro	: 	Writing the original IP stack
+ *		Fred Van Kempen :	Tidying up the TCP/IP
+ *
+ *	Many thanks go to Keith Baker, Institute For Industrial Information
+ *	Technology Ltd, Swansea University for allowing me to work on this
+ *	in my own time even though it was in some ways related to commercial
+ *	work I am currently employed to do there.
+ *
+ *	All the material in this file is subject to the Gnu license version 2.
+ *	Neither Alan Cox nor the Swansea University Computer Society admit
+ *	liability nor provide warranty for any of this software. This material
+ *	is provided as is and at no charge.
+ *
+ *	Portions Copyright (c) 2000-2003 Conectiva, Inc. <acme@conectiva.com.br>
+ *	Neither Arnaldo Carvalho de Melo nor Conectiva, Inc. admit liability nor
+ *	provide warranty for any of this software. This material is provided
+ *	"AS-IS" and at no charge.
+ *
+ * 	Portions Copyright (c) 1995 Caldera, Inc. <greg@caldera.com>
+ *	Neither Greg Page nor Caldera, Inc. admit liability nor provide
+ *	warranty for any of this software. This material is provided
+ *	"AS-IS" and at no charge.
+ *
+ *	See net/ipx/ChangeLog.
+ */
+
+#include <linux/capability.h>
+#include <linux/errno.h>
+#include <linux/if_arp.h>
+#include <linux/if_ether.h>
+#include <linux/init.h>
+#include <linux/ipx.h>
+#include <linux/kernel.h>
+#include <linux/list.h>
+#include <linux/module.h>
+#include <linux/net.h>
+#include <linux/netdevice.h>
+#include <linux/uio.h>
+#include <linux/slab.h>
+#include <linux/skbuff.h>
+#include <linux/socket.h>
+#include <linux/sockios.h>
+#include <linux/string.h>
+#include <linux/types.h>
+#include <linux/termios.h>
+
+#include <net/ipx.h>
+#include <net/p8022.h>
+#include <net/psnap.h>
+#include <net/sock.h>
+#include <net/datalink.h>
+#include <net/tcp_states.h>
 #include <net/net_namespace.h>
 
 #include <asm/uaccess.h>

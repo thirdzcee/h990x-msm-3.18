@@ -992,7 +992,6 @@ static int msm_lsm_ioctl_shared(struct snd_pcm_substream *substream,
 				__func__, "LSM_LAB_CONTROL");
 			return -EFAULT;
 		}
-
 		dev_dbg(rtd->dev, "%s: ioctl %s, enable = %d\n",
 			 __func__, "SNDRV_LSM_LAB_CONTROL", enable);
 		if (!prtd->lsm_client->started) {
@@ -1464,7 +1463,6 @@ static int msm_lsm_ioctl(struct snd_pcm_substream *substream,
 		}
 
 		pr_debug("%s: SNDRV_LSM_SET_PARAMS\n", __func__);
-
 		if (copy_from_user(&det_params, arg,
 				   sizeof(det_params))) {
 			dev_err(rtd->dev,

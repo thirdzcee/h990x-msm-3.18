@@ -2106,6 +2106,11 @@ int mdss_mdp_layer_pre_commit_wfd(struct msm_fb_data_type *mfd,
 	if (commit->output_layer) {
 		wfd = mdp5_data->wfd;
 		output_layer = commit->output_layer;
+		if (output_layer->buffer.plane_count > MAX_PLANES) {
+			pr_err("Output buffer plane_count exceeds MAX_PLANES limit:%d\n",
+					output_layer->buffer.plane_count);
+			return -EINVAL;
+		}
 
 		if (output_layer->buffer.plane_count > MAX_PLANES) {
 			pr_err("Output buffer plane_count exceeds MAX_PLANES limit:%d\n",

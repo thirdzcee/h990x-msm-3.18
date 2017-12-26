@@ -4,7 +4,7 @@
 ## AnyKernel setup
 # begin properties
 properties() {
-kernel.string=H990 DOTS kernel by leicxan and jahlex @ xda-developers
+kernel.string=NeOcOrE Kernel by thirdzcee @ xda
 do.devicecheck=1
 do.modules=1
 do.cleanup=1

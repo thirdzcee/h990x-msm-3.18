@@ -2,6 +2,33 @@
 # AnyKernel2 Backend
 # osm0sis @ xda-developers
 
+ui_print "Ironbuang-Systems";
+ui_print " ";
+ui_print "thirdzcee@xda";
+ui_print " ";
+ui_print " ";
+ui_print " ";
+ui_print " ";
+ui_print " ";
+ui_print "DISCLAIMER";
+ui_print "I am not responsible in any way";
+ui_print "for anything that can be happen";
+ui_print "to your device when you flash my kernel";
+ui_print "You do so at your own risk!!!";
+ui_print " ";
+ui_print " ";
+ui_print "Pull out the battery now ";
+ui_print "If you do not agree and  ";
+ui_print "Wish to abort the inatall";
+sleep 5;
+ui_print "Kernel Installation will begin in";
+sleep 1;
+ui_print "3";
+sleep 1;
+ui_print "2";
+sleep 1;
+ui_print "1";
+
 OUTFD=/proc/self/fd/$2;
 ZIPFILE="$3";
 DIR=`dirname "$ZIPFILE"`;
@@ -118,3 +145,4 @@ umount /system;
 umount /data;
 ui_print " ";
 ui_print "Done!";
+ui_print "Welcome to the FUTURE!!! ";

@@ -1,6 +1,6 @@
 export KBUILD_BUILD_USER=thirdzcee
 export ARCH=arm64
-export CROSS_COMPILE=/home/ironbuang/android/toolchains/aarch64-gcc-linaro-7.1.1-2017.05/bin/aarch64-linux-gnu-
+export CROSS_COMPILE=/home/ironbuang/android/toolchains/gcc-linaro-7.x/bin/arch64-linux-android-
 
 DIR=$(pwd)
 BUILD="$DIR/build"

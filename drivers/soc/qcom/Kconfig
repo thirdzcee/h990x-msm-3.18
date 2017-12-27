@@ -824,6 +824,18 @@ config MSM_REMOTEQDSS
 	  enable/disable these events. Interface located in
 	  /sys/class/remoteqdss.
 
+config ASMP
+ 	bool "Multi-core automatic hotplug support"
+ 	depends on SMP
+ 	default n
+ 	help
+ 	Automatically hotplugs the multiple cpu cores on and off
+ 	based on cpu load and suspend stat
+
+config STATE_NOTIFIER
+        bool "State Notifier"
+	default n
+
 source "drivers/soc/qcom/memshare/Kconfig"
 
 endif # ARCH_MSM

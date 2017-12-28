@@ -2,7 +2,8 @@ export KBUILD_BUILD_USER=thirdzcee
 export ARCH=arm64
 export USE_CCACHE=1
 export CCACHE_DIR=/home/ironbuang/.ccache
-export CROSS_COMPILE=/home/ironbuang/android/toolchains/gcc-prebuilts/bin/aarch64-linaro-linux-android-gcc
+export PATH="/usr/lib/ccache:$PATH"
+export CROSS_COMPILE=/home/ironbuang/android/toolchains/gcc-prebuilts/bin/aarch64-linaro-linux-android-
 
 DIR=$(pwd)
 BUILD="$DIR/build"

@@ -130,3 +130,8 @@ ui_print "I am not responsible in any way";
 ui_print "for anything that can be happen";
 ui_print "to your device when you flash my kernel";
 ui_print "You do so at your own risk!!!";
+ui_print " ";
+ui_print " ";
+ui_print " ";
+ui_print " ";
+ui_print " ";

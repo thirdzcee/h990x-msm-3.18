@@ -8,7 +8,8 @@ export CROSS_COMPILE=/home/ironbuang/android/toolchains/gcc-prebuilts/bin/aarch6
 DIR=$(pwd)
 BUILD="$DIR/build"
 OUT="$DIR/zip"
-ZIPNAME="neocore.zip"
+DATE=`date '+%Y-%m-%d--%H-%M-%S'`;
+ZIPNAME="neocore-$DATE.zip"
 NPR=`expr $(nproc) + 1`
 
 echo "cleaning build..."

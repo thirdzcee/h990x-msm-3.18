@@ -2944,13 +2944,6 @@ next_candidate(const unsigned long *list, int start, int end)
 	return sched_cluster[cluster_id];
 }
 
-static unsigned int Lgentle_fair_sleepers = 0;
-
-void relay_gfs(unsigned int gfs)
-{
-	Lgentle_fair_sleepers = gfs;
-}
-
 static void
 update_spare_capacity(struct cluster_cpu_stats *stats,
 		      struct cpu_select_env *env, int cpu, int capacity,

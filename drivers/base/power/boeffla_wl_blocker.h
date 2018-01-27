@@ -16,7 +16,7 @@
 
 #define BOEFFLA_WL_BLOCKER_VERSION	"1.1.0"
 
-#define LIST_WL_DEFAULT				""
+#define LIST_WL_DEFAULT				"wlan_wake;wlan_scan_wake;wlan_rx_wake;IPA_WS;netmgr_wl;[timerfd];alarmtimer"
 
 #define LENGTH_LIST_WL				255
 #define LENGTH_LIST_WL_DEFAULT		100
